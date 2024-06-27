@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <Dependency>D:\Dependency</Dependency>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(Dependency)\stb;$(Dependency)\glm;$(Dependency)\glfw-3.4.bin.WIN64\include;D:\CommonLib\VulkanSDK\1.3.283.0\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(Dependency)\glfw-3.4.bin.WIN64\lib-vc2022;D:\CommonLib\VulkanSDK\1.3.283.0\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="Dependency">
+      <Value>$(Dependency)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
